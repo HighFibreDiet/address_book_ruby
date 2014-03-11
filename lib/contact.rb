@@ -2,13 +2,13 @@ class Contact
   @@all_contacts =[]
   @@names=[]
 
-  attr_reader :name, :phone, :email, :address
+  attr_accessor :name, :phones, :emails, :addresses
 
-  def initialize(name, phone, email, address)
+  def initialize(name)
     @name = name
-    @phone = phone
-    @email = email
-    @address = address
+    @addresses = []
+    @phones = []
+    @emails = []
   end
 
   def Contact.all
@@ -27,8 +27,8 @@ class Contact
     @@all_contacts = []
   end
 
-  def Contact.create(name, phone, email, address)
-    new_contact = Contact.new(name, phone, email, address)
+  def Contact.create(name)
+    new_contact = Contact.new(name)
     @@all_contacts << new_contact
     new_contact
   end
@@ -45,22 +45,8 @@ class Contact
     @@all_contacts[index]
   end
 
-  def set_name(name)
-    @name = name
-  end
-
-  def set_phone(phone)
-    @phone = phone
-  end
-
-  def set_email(email)
-    @email = email
-  end
-
-  def set_address(address)
-    @address = address
-  end
 end
+
 
 
 

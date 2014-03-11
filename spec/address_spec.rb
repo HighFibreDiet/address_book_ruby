@@ -9,4 +9,6 @@ describe Address do
       test_address.city.should eq "Portland"
     end
   end
+
+
 end
